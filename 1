@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+  - name: installing nginx load balancer
+    yum:
+      name: nginx
+      state: present
+      service:
+              name: nginx
+              state: present
+              enabled: yes
+...

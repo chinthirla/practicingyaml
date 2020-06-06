@@ -1,8 +1,16 @@
 ---
-hosts: all
-tasks:
-  -name: installing nginx load balancer
-  yum:
-    name: nginx
-    state: present
+- hosts: all
+  tasks:
+  - name: installing nginx load balancer
+    yum:
+      name: nginx
+      state: latest
+  tasks:    
+  - name: enbaling nginx load balancer
+    service: 
+      name: nginx
+      #      state: present
+      state: started
+      enabled: yes
+
 ...
