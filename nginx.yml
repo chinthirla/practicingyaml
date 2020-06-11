@@ -1,16 +1,26 @@
 ---
 - hosts: all
   tasks:
-  - name: installing nginx load balancer
+  - name: installing and starting  nginx load balancer 
     yum:
       name: nginx
       state: latest
-  tasks:    
-  - name: enbaling nginx load balancer
-    service: 
-      name: nginx
-      #      state: present
-      state: started
-      enabled: yes
+    notify: restart httpd
 
+      #  - name: enabling nginx 
+      #    service: 
+      #      name: nginx
+      #      state: started
+      #      enabled: yes
+  - name: copying latest index.html file
+    copy:
+            src: /home/index.html
+            dest: /var/www/html/
+            
+
+  handlers:
+          - name: notifying to restart 
+            service: 
+             name: httpd
+             state: restarted
 ...
