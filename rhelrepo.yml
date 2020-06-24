@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+          - name: innstalling and enabling rhel epel repo
+            yum:
+                  name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+                  state: latest
+                  enablerepo: epel
