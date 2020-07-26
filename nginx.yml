@@ -2,6 +2,7 @@
 - name: playing ansible and git
   hosts: localhost
   connection: local
+  become: yes
   tasks:
   - name: installing and starting  nginx load balancer 
     yum:
