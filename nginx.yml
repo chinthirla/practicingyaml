@@ -1,6 +1,7 @@
 ---
-- hosts: localhost
-connections: local
+- name: playing ansible and git
+  hosts: localhost
+  connection: local
   tasks:
   - name: installing and starting  nginx load balancer 
     yum:
