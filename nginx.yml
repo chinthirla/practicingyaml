@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  connections: local
+connections: local
   tasks:
   - name: installing and starting  nginx load balancer 
     yum:
